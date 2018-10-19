@@ -2,24 +2,52 @@ This is the analysis for Markov Part 2, Fall 2018
 
 Include your name and net id here. Answer the questions from the assignment 
 that are reproduced below
+Tanisha Nalavadi, tn85
 
 (1) Determine (from running Benchmark.java) how long it takes for 
 BaseMarkov to generate 2,000, 4,000, 8,000, 16,000, and 32,000 
 random characters using the default file and an order 5 Markov Model. 
 Include these timings in your report. 
+
+#random chars    #time
+2000=             0.183
+4000=             0.351
+8000=             0.696
+16,000=           1.412
+32,000=           2.828
+
+When the data above is plotted in a graph, a linear trend is observed.
+Looking at the above timings, as the number of characters increases, the timing increases linearly, approximately by a factor of 2. 
+Thus the code is O(N) where N is the number of random characters generated.
+
 The program also generates 4,096 characters using texts that increase in 
 size from 496,768 characters to 4,967,680 characters (10 times the number).  
 Do you the timings support the O(NT) analysis for BaseMarkov?
 
+Similar to above, looking at the data obtained by changing the text size, and plotting it on a graph, a linear trend can be observed and the 
+timing is increasing my a factor of approximately ten. Thus the code is O(T) where N is the number of random characters generated.
 
+Since when changing both the number of characters generated and the text size, the increase in time is linear therefore the big O of 
+BaseMarkov is O(NT)
 
 (2) Determine (from running Benchmark.java) how long it takes for 
 EfficientMarkov to generate 2,000, 4,000, 8,000, 16,000, and 32,000 
 random characters using the default file and an order 5 Markov Model. 
 Include these timings in your report. 
+
+#random chars    #time
+2000=             0.105
+4000=             0.093
+8000=             0.096
+16,000=           0.094
+32,000=           0.102
+
+Looking at the data above, the time is constant, independent of the number of characters produced, thus the big O is O(1)
+
 The program also generates 4,096 characters using texts that increase in 
 size from 496,768 characters to 4,967,680 characters (10 times the number).  
 Do you the timings support the O(N+T) analysis for EfficientMarkov?
+
 
 (3)The tests in the class Benchmark use an order-5 Markov Model. 
 Run tests that you think are appropriate to determine if the order of the 

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public interface MarkovInterface<Type> {
 	
+	
 	/**
 	 * Set the training text for subsequent random text generation.
 	 * @param text is the training text
