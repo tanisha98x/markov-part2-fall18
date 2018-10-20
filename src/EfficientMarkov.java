@@ -2,14 +2,28 @@ import java.util.*;
 public class EfficientMarkov extends BaseMarkov{
 	private HashMap<String,ArrayList<String>> myMap;
 
+	/**
+	 * Construct a EfficientMarkov object with
+	 * the specified order
+	 * @param order size of this markov generator
+	 */
 	public EfficientMarkov(int order) {
 		super(order);//
 		myMap = new HashMap<String, ArrayList<String>>();
 	}
+
+	/**
+	 * Default constructor has order 3
+	 */
 	public EfficientMarkov() {
 		this(3);
 	}
-
+	
+	/**
+	 * Creates a map with keys of that are strings of length my order from the given text and values that are array lists of 
+	 * strings of characters that follow the key. At the end of the text, a Pseudo Eos tag is added that breaks the loop
+	 * @param a given string
+	 */
 	@Override
 	public void setTraining(String text) {
 		myMap.clear();
@@ -35,6 +49,12 @@ public class EfficientMarkov extends BaseMarkov{
 		}
 
 	}
+	
+	/**
+	 * Returns the value of a given key in myMap and throws a No Such Element Exception if the key isn't found
+	 * @param a given string
+	 * @return An array list of strings
+	 */
 	
 	@Override
 	public ArrayList<String> getFollows(String MyMapKey) {
