@@ -1,6 +1,6 @@
 import java.util.*;
 public class EfficientMarkov extends BaseMarkov{
-	protected HashMap<String,ArrayList<String>> myMap;
+	private HashMap<String,ArrayList<String>> myMap;
 
 	public EfficientMarkov(int order) {
 		super(order);//
