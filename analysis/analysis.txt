@@ -1,4 +1,4 @@
-This is the analysis for Markov Part 2, Fall 2018
+ This is the analysis for Markov Part 2, Fall 2018
 
 Include your name and net id here. Answer the questions from the assignment 
 that are reproduced below
@@ -25,10 +25,12 @@ size from 496,768 characters to 4,967,680 characters (10 times the number).
 Do you the timings support the O(NT) analysis for BaseMarkov?
 
 Similar to above, looking at the data obtained by changing the text size, and plotting it on a graph, a linear trend can be observed and the 
-timing is increasing my a factor of approximately ten. Thus the code is O(T) where N is the number of random characters generated.
+timing is increasing my a factor of approximately ten. Thus the code is O(T) where T is the number of random characters generated.
 
 Since when changing both the number of characters generated and the text size, the increase in time is linear therefore the big O of 
 BaseMarkov is O(NT)
+
+
 
 (2) Determine (from running Benchmark.java) how long it takes for 
 EfficientMarkov to generate 2,000, 4,000, 8,000, 16,000, and 32,000 
@@ -48,8 +50,16 @@ The program also generates 4,096 characters using texts that increase in
 size from 496,768 characters to 4,967,680 characters (10 times the number).  
 Do you the timings support the O(N+T) analysis for EfficientMarkov?
 
+looking at the data obtained by changing the text size, and plotting it on a graph,the time is constant, 
+independent of the number of characters produced, thus the big O is O(1)
+
+Hence, combining o(1) and o(1), the big O of the code is O(N+T).
 
 (3)The tests in the class Benchmark use an order-5 Markov Model. 
 Run tests that you think are appropriate to determine if the order of the 
 Markov Model has a significant impact on the running time for BaseMarkov. 
 Explain your reasoning.
+
+I created a test where I varied the order of the markov model by increasing it by a factor of two and recording the resulting timings 
+every time I did so. I plotted this on a graph and I found that as the order of the markov model increases, the time decreases as there 
+are fewer keys in the map hence less time to find the needed key and lesser values as well.
