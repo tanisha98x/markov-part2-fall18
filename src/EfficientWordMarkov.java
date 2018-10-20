@@ -6,15 +6,26 @@ import java.util.Random;
 public class EfficientWordMarkov extends BaseWordMarkov {
 	private HashMap<WordGram,ArrayList<String>> myMap;
 	
+	/**
+	 * Default constructor has order 3
+	 */
 	public EfficientWordMarkov() {
 		this(2);
 	}
-	
+	/**
+	 * Construct a EfficientWordMarkov object with
+	 * the specified order
+	 * @param order size of this Markov generator
+	 */
 	public EfficientWordMarkov(int order){
 		super(order); //
 		myMap = new HashMap<WordGram, ArrayList<String>>();
 	}
-
+	/**
+	 * Creates a map with keys of that are wordgrams of length my order from the given text and values that are array lists of 
+	 * strings of words that follow the key. 
+	 * @param a given string
+	 */
 	@Override
 	public void setTraining(String text){
 		myMap.clear();
@@ -41,7 +52,11 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 		}
 		
 	}
-	
+	/**
+	 * Returns the value of a given key in myMap and throws a No Such Element Exception if the key isn't found
+	 * @param a given Wordgram
+	 * @return An array list of strings
+	 */
 	@Override
 		public ArrayList<String> getFollows(WordGram key) {
 			if (!myMap.containsKey(key)) {
