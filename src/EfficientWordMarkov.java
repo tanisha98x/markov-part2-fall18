@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 import java.util.Random;
 
 public class EfficientWordMarkov extends BaseWordMarkov {
-	protected HashMap<WordGram,ArrayList<String>> myMap;
+	private HashMap<WordGram,ArrayList<String>> myMap;
 	
 	public EfficientWordMarkov() {
 		this(2);
